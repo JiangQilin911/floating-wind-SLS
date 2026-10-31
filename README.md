@@ -117,7 +117,7 @@ floating-wind-SLS/
 ├── README.md
 └── requirements.txt
 
-4. Environment and installation
+## 4. Environment and installation
 Requirements
 Python >= 3.9
 
@@ -158,7 +158,7 @@ bash
 pip install -r requirements.txt
 Please install a PyTorch version compatible with your operating system, GPU and CUDA environment if it is not already available.
 
-5. Data availability and preparation
+## 5. Data availability and preparation
 5.1 Data included in this repository
 The repository provides the derived raster layers and sample tables used by the two workflows, together with selected output tables and a continuous CSI raster.
 
@@ -226,7 +226,7 @@ The thresholds are regional screening criteria rather than universal engineering
 
 For custom datasets, all input rasters should be spatially co-registered and should follow the same channel definitions and file naming conventions, or the file list in CAE-DEC/main.py should be modified accordingly.
 
-6. Running the code
+## 6. Running the code
 6.1 Stage A: Submarine landslide susceptibility assessment
 bash
 cd "Submarine landslide susceptibility"
@@ -282,7 +282,7 @@ For paths containing spaces or Chinese characters, always quote the path in the 
 
 bash
 python main.py --tif_dir "CAE-DEC/输入" --save_dir "CAE-DEC/输出"
-7. Method summary
+## 7. Method summary
 7.1 SLS modelling
 Nine initial predictors: water depth, slope gradient, slope aspect, curvature, distance to faults, topographic relief, seafloor roughness, sediment type and PGA.
 
@@ -309,7 +309,7 @@ Ablation experiments compare DEC, PCA-DEC and CAE-DEC.
 
 Sensitivity analyses perturb λ, K and γ and evaluate IoU, Moran's I, CH and silhouette metrics.
 
-8. Output interpretation and limitations
+## 8. Output interpretation and limitations
 The CSI represents relative spatial development suitability within the study area under the adopted indicators, hard constraints and prior rules. It does not represent a final engineering approval, an economically optimal project location, or a project-level failure probability.
 
 The SLS map is a regional statistical susceptibility map derived from the available inventory and predictor set. It should be used for early-stage regional screening and should be followed by high-resolution geophysical surveys, geotechnical investigations and site-specific numerical modelling.
@@ -318,7 +318,7 @@ The CAE-DEC clustering metrics measure intrinsic latent-space separation and com
 
 The planning framework does not explicitly model turbine power curves, capacity factors, wake losses, mooring-system design, submarine-cable routing or onshore grid-connection costs. These should be incorporated in project-level studies.
 
-9. Reproducibility
+## 9. Reproducibility
 Random seed: 42 for Python, NumPy and PyTorch where applicable.
 
 The SLS workflow uses stratified five-fold cross-validation and grid search.
@@ -331,7 +331,7 @@ Library versions, CUDA/cuDNN versions and hardware can affect numerical results.
 
 To maximise reproducibility, record the Python, PyTorch, CUDA, scikit-learn, XGBoost, LightGBM, CatBoost and rasterio versions used in your run.
 
-10. Citation
+## 10. Citation
 If you use this code or data in your research, please cite the associated manuscript:
 
 bibtex
@@ -344,12 +344,12 @@ bibtex
 }
 Please also cite the original data providers where appropriate, including EMODnet, GEM, USGS, Global Wind Atlas, EMSA/EMODnet Human Activities, NOAA and the MaGIC submarine landslide database.
 
-11. License
+## 11. License
 No open-source license has been specified for this repository yet. Please add a LICENSE file before public release. Until a license is provided, default copyright applies.
 
 The source-code license, if added, does not automatically grant permission to redistribute original third-party survey data or derived data products. Users should independently verify the applicable data-use restrictions before redistributing or reusing the data.
 
-12. Contact
+## 12. Contact
 For questions about the code, data format or reproducibility, please open an issue in this repository:
 
 https://github.com/JiangQilin911/floating-wind-SLS
